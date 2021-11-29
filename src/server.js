@@ -7,7 +7,10 @@ const routes = require('./routes');
 
 const server = express();
 server.use(cors());
+
 server.use(bobyParser.urlencoded({extends:false}));
+
+server.use('/api', routes);
 server.listen(process.env.PORT, ()=>{
     console.log(`Servidor rodando em: http://localhot:${process.env.PORT}`)
 })
